@@ -33,8 +33,9 @@ export default class CurrencyInput extends Component {
 				<span>£</span>
 				<input type="text"
 					value={value}
-					onChange={this.handleChange.bind(this)}
-					onFocus={this.handleFocus.bind(this)}/>
+					onChange={() => { this.props.currency(this.handleChange.bind(this)) }}
+          onFocus={this.handleFocus.bind(this)}
+				/>
 			</div>
 		)
 	}

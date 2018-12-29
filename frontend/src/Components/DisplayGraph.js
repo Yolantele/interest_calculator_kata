@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { VictoryLine, VictoryChart } from 'victory'
 
 export default class DisplayGraph extends Component {
+	
 
 	render() {
 		const { data } = this.props;
@@ -64,6 +65,13 @@ export default class DisplayGraph extends Component {
 		);
 	}
 }
+
+const localStyles = {
+	container: { 
+	  display: 'flex',
+	},
+}
+
 
 DisplayGraph.propTypes = {
 	data: PropTypes.arrayOf(PropTypes.object)
