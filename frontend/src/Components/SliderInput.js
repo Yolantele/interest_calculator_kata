@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import './SliderInput.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './styling/SliderInput.css';
 
 export default class SliderInput extends Component {
 
