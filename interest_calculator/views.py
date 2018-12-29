@@ -14,25 +14,33 @@ def calculate(request):
     calculation_period = params.get('calculationPeriod', None)
     interval = params.get('paidInterestInterval', None)
 
-    if savings_amount is None or interest_rate is None or monthly_deposit is None:
-        return HttpResponseBadRequest('Required parameters are not provided')
+    if savings_amount is None or interest_rate is None or monthly_deposit is None or calculation_period is None:
+        return HttpResponseBadRequest('Required parameters are savingsAmount, interestRate, monthlyDeposit, calculationPeriod')
 
-    if calculation_period is None:
-        calculation_period = 600 # 50 years of 12 month.
+    if type(interest_rate) is not float:
+        return HttpResponseBadRequest('interestRate should be a float')
 
-    if interval is None:
-        interval = 1 # paid interest interval is set to every month
+    if type(calculation_period) is not int:
+        return HttpResponseBadRequest('calculationPeriod should be set in number of months as an integer')
 
+    
     repeat_savings_calculation = calculation_period / interval 
     result = []
+
     for i in range(int(repeat_savings_calculation)):
         savings_before_interest = monthly_deposit * interval + savings_amount
         savings_after_interest = savings_before_interest * interest_rate + savings_before_interest
         savings_amount = savings_after_interest
         result.append(savings_amount)
 
-    print('done')
-    return JsonResponse({'result': result})
+    return JsonResponse({
+        'initialSavings': params.get('savingsAmount', None),
+        'monthlyDeposit': monthly_deposit,
+        'interestRate': interest_rate,
+        'interestIntervalInMonths': interval,
+        'calculationPeriod': calculation_period,
+        'interestCalculations': result,
+    })
 
 
 def hello(request):

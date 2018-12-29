@@ -1,4 +1,18 @@
-## Python & Django setup
+## Interest Calculator Kata
+
+
+ /calculate/ API returns calculations, based on provided parameters:
+ - initial savings amount
+ - interest rate
+ - monthly deposit (assuming not a month is missed)
+ - clculation period ( for example, next 50 years)
+ - Paid Interest Interval in months. Options are  monthly, quarterly ( every 3 month) or annually (every 12 month)
+
+![screenshot 2018-12-29 at 11 40 12](https://user-images.githubusercontent.com/30931242/50537921-9cfa6e00-0b5e-11e9-8433-1c48fdae0877.png)
+
+
+
+Python & Django setup
 
 * Install `python3` via brew
 * Clone the repo
