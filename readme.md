@@ -1,6 +1,8 @@
 ## Interest Calculator Kata
 
 
+Problem solving so far:
+
  /calculate/ API returns calculations, based on provided parameters:
  - initial savings amount
  - interest rate
@@ -9,6 +11,20 @@
  - Paid Interest Interval in months. Options are  monthly, quarterly ( every 3 month) or annually (every 12 month)
 
 ![screenshot 2018-12-29 at 11 40 12](https://user-images.githubusercontent.com/30931242/50537921-9cfa6e00-0b5e-11e9-8433-1c48fdae0877.png)
+
+Front end:
+- fetches data inside the App component, (mvp, hardcoced values)
+- sets proxy route to map front-end to back-end /calculate/ route. 
+
+Next Steps:
+- there is a lot of front end left to address - passing the input values up and down the component tree to render graph onChange
+- some styling refactoring required to seperate the concerns in a better way
+- Please see my previous front-end katas done recently to gage front-end capacity, as I feel in this kata it hasn't been addressed enough: 
+    responsive UI rendering changing fetched data: https://github.com/Yolantele/summary-display-kata
+
+Blockers:
+- time dedicated to this challenge was around 4 hours
+- blocker which took more time than expected was to resolve proxy mapping : localhost front-end to back-end address route calling. The mistake was to atempt a quick heroku-app deployment while not noticing the existing API.js. 
 
 
 
